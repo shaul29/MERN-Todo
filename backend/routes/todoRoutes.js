@@ -10,7 +10,7 @@ import { protect } from '../middleware/authMiddleware.js'
 
 router.route('/').post(protect, addTodo)
 router.route('/').get(protect, getMyTodos)
-router.route('/:id').put(protect, updateTodoToCompleted)
+router.route('/:id').put(updateTodoToCompleted)
 router.route('/:id').delete(protect, deleteTodo)
 
 
