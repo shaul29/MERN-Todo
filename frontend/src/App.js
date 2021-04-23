@@ -4,6 +4,7 @@ import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
 import Navbar from './components/Navbar.component'
 import RegisterScreen from './screens/RegisterScreen'
+import NotLogInScreen from './screens/NotLogInScreen'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/' component={HomeScreen} />
           <Route exact path='/login' component={LoginScreen} />
           <Route exact path='/register' component={RegisterScreen} />
+          <Route exact path='/newuser' component={NotLogInScreen} />
         </Switch>
       </Router>
     </>

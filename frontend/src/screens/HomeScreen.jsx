@@ -10,9 +10,11 @@ const HomeScreen = ({ history }) => {
     const { userInfo } = userLogin
 
     useEffect(() => {
-        {!userInfo && history.push('/login')}
-    
-}, [userInfo, history])
+        if (!userInfo) {
+           history.push('/newuser')
+        }
+    }, [history, userInfo])
+
         return (
             <VStack mt="50px">
                <Head />
@@ -20,6 +22,7 @@ const HomeScreen = ({ history }) => {
                 <TodoList />
             </VStack>
             )
+        
     }
 
 export default HomeScreen

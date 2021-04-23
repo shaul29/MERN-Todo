@@ -33,11 +33,9 @@ import {
 
     const redirect = location.search ? location.search.split('=')[1] : '/'
 
-    useEffect(() => {
-        if (userInfo) {
-            history.push(redirect)
-        }
-    }, [history, userInfo, redirect])
+    if(userInfo) {
+      history.push(redirect)
+    }
 
     const submitHandler = (e) => {
       e.preventDefault()
