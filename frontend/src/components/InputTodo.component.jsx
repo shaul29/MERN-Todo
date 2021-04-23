@@ -23,7 +23,6 @@ const InputTodo = () => {
         }
     }
 
-    
     return (
         <Box p={5} shadow="md" borderWidth="1px" w="60vw">
             {error && <Message status='error' errorMessage={error} />}

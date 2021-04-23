@@ -17,10 +17,10 @@ const HomeScreen = ({ history }) => {
 
         return (
             <VStack mt="50px">
-               <Head />
-               <InputTodo />
-                <TodoList />
-            </VStack>
+             <Head />
+             <InputTodo />
+             <TodoList />
+           </VStack>
             )
         
     }

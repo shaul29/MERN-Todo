@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/userActions'
 import { Box, Flex, Heading, Spacer, Menu, MenuItem, MenuList, MenuButton, Text, HStack} from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
 import { AiOutlineUser } from 'react-icons/ai'
 import { FcTodoList } from 'react-icons/fc'
 import {IconContext} from "react-icons"
@@ -32,23 +31,20 @@ const Navbar = () => {
         </Box>
         <Spacer />
         <Box p="2" mr="10px">
-         {userInfo ? ( 
+         {userInfo && ( 
          <Menu>
             <MenuButton>
                 <HStack>
                 <Text fontSize="xl" fontWeight="bold" mt="5px">
                 {userInfo.name}
-                </Text><AiOutlineUser />
+                </Text>
+                    <AiOutlineUser />
                 </HStack>
                 </MenuButton> 
               <MenuList>
-                  <MenuItem bg="#00A3C4" onClick={logoutHandler}>Logout</MenuItem>
+                  <MenuItem onClick={logoutHandler}><Text fontWeight="bold">Logout</Text></MenuItem>
               </MenuList>
-         </Menu>) : (
-             <Box mt="8px">
-             <Link to="/login" ><Text fontWeight="bold">Login</Text></Link>
-             </Box>
-         )}
+         </Menu>) }
         </Box>
       </Flex>
       </Box>

@@ -17,7 +17,6 @@ import {
 import {
   TODO_LIST_MY_RESET
 } from '../constants/todoConstants'
-import { listMyTodo } from './todoActions'
 
 export const login = (email, password) => async (dispatch) => {
   try {
