@@ -21,10 +21,10 @@ app.use('/api/users', userRoutes)
 app.use('/api/todo', todoRoutes)
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
+    app.use(express.static(path.join('client/build')))
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'))
+        res.sendFile(path.join(_dirname, 'client', 'build', 'index.html'))
     })
 }
 
