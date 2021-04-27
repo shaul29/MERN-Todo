@@ -1,4 +1,3 @@
-import { Checkbox } from '@chakra-ui/checkbox'
 import { Box, HStack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/layout'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -6,6 +5,7 @@ import {deleteTodo, listMyTodo, updateTodo} from '../actions/todoActions'
 import Message from './Message.component'
 import Loader from './Spinner.component'
 import { FaTrash } from 'react-icons/fa'
+import { TiInputChecked } from 'react-icons/ti'
 
 const TodoList = () => {
     const dispatch = useDispatch()
@@ -54,11 +54,13 @@ const TodoList = () => {
                >  
                {todos.map((todo) => (
                    <Box h="40px" key={todo._id}>
-                       <HStack mt="34px">
-                           <Box onClick={() => updateHandler(todo._id)} mt="5px">
-                       <Checkbox borderColor="black" isChecked= {todo.isCompleted ? true : false} />
-                       </Box>
-                       <Text pl="15px">{todo.todo}</Text>
+                       <HStack mt="30px">
+                       <TiInputChecked
+                           color="green"
+                           cursor="pointer"
+                           size="28px"
+                           onClick={() => updateHandler(todo._id)} mt="5px"  />
+                       {todo.isCompleted ? <Text as="del" pl="15px">{todo.todo}</Text> : <Text pl="15px">{todo.todo}</Text>}
                        <Spacer />
                        <FaTrash 
                         color="red"
