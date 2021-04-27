@@ -23,8 +23,8 @@
     "heroku-postbuild": "YARN_PRODUCTION=false yarn add --prefix frontend && yarn run build --prefix frontend"
   },
   "engines": {
-    "node": "14.15.4",
-    "yarn": "1.22.5"
+    "node": "14.x",
+    "yarn": "1.x"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",
