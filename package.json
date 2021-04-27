@@ -22,6 +22,9 @@
     "dev": "concurrently -k \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "YARN_PRODUCTION=false yarn add --prefix frontend && yarn run build --prefix frontend"
   },
+  "engines": {
+    "node": "v14.15.4"
+  },
   "devDependencies": {
     "concurrently": "^6.0.2",
     "nodemon": "^2.0.7"
